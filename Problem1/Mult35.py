@@ -16,7 +16,7 @@ for x in range(3, 1000):
     if (x%3==0 or x%5==0) and binarySearch(arr, 0, len(arr)-1, x)==-1:
         arr.append(x)
 
-sum = 0
+add = 0
 for i in arr:
-    sum+=i
-print(sum)
+    add+=i
+print(add)
