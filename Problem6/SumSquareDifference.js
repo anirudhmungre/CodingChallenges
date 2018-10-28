@@ -6,18 +6,13 @@
 // Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
 // Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-function sumOfSquares(){
+function diff(){
+    let sqSum = 1; 
     let sumSq = 1;
     for (let i = 2 ; i <= 100 ; i++){
+        sqSum += i;
         sumSq += (i*i);
     }
-    return sumSq;
+    return sqSum**2-sumSq;
 }
-function squareOfSums(){
-    let sqSum = 1; 
-    for (let i = 2 ; i <= 100 ; i++){
-        sqSum += i;
-    }
-    return sqSum*sqSum;
-}
-console.log(squareOfSums()-sumOfSquares());
+console.log(diff());
