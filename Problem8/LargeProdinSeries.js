@@ -30,7 +30,6 @@ function largestProduct(dig, num){
     for (let i = 0 ; i<= num.length-dig ; i++){
         product = 1;
         for (let j = i ; j-i < 13 ; j++){
-            // console.log(parseInt(num.charAt(j)));
             product *= parseInt(num.charAt(j));
             if (product>largest){
                 largest = product;
