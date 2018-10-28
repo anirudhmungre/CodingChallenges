@@ -11,7 +11,7 @@ function isPalindrome(mul){
 function iterate(){
     let largest = -1;
     for (let i = 999 ; i > 100 ; i--){
-        for (let j = 999 ; j > 100 ; j--){
+        for (let j = i ; j > 100 ; j--){
             // console.log(i + "   " + j);
             // console.log(i*j);
             if (isPalindrome(i*j) && (i*j)>largest){
