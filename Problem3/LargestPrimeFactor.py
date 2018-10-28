@@ -1,7 +1,7 @@
 import math
 
 n = 600851475143
-if n%2 == 0:
+if n%2 == 0: # Check 2 initialially
     n /= 2
 i = 3
 while i < math.sqrt(n):
