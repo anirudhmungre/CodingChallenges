@@ -8,9 +8,8 @@
 // Find the product abc.
 
 function pythagTriplet(){
-
 }
 
 console.time("runtime");
-console.log();
+console.log(pythagTriplet());
 console.timeEnd("runtime");
