@@ -14,7 +14,7 @@ function iterate(){
         for (let j = i ; j > 100 ; j--){
             // console.log(i + "   " + j);
             // console.log(i*j);
-            if (isPalindrome(i*j) && (i*j)>largest){
+            if ((i*j)>largest && isPalindrome(i*j)){
                 largest = i*j;
             }
         }
