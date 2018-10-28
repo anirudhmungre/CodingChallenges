@@ -7,9 +7,17 @@
 // Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
 function sumOfSquares(){
-
+    let sumSq = 1;
+    for (let i = 2 ; i <= 100 ; i++){
+        sumSq += (i*i);
+    }
+    return sumSq;
 }
 function squareOfSums(){
-
+    let sqSum = 1; 
+    for (let i = 2 ; i <= 100 ; i++){
+        sqSum += i;
+    }
+    return sqSum*sqSum;
 }
 console.log(squareOfSums()-sumOfSquares());
