@@ -25,9 +25,39 @@
 // The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 // What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
-function largestProd(){
-
+function getBlock(){
+    const fs = require('fs');
+    let arr = fs.readFileSync("input.txt", "UTF8").split('\n');
+    let block = [];
+    for (let i = 0 ; i < arr.length ; i++){
+        block.push(arr[i].split(' '));
+    }
+    for (let i = 0 ; i < block.length ; i++){
+        block[i] = block[i].map(function(x){
+            return parseInt(x);
+        })
+    }
+    return block;
 }
+
+function largestProd(){
+    let block = getBlock();
+    let largest = -1;
+    let test = 0;
+    // Only check down and right because up and left is redundant
+    for (let i = 0 ; i < block.length-4 ; i++){
+        for (let j = 0 ; j < block.length-4 ; j++){
+            // Check down
+            testDown = block[i][j]*      
+            // Check Right
+            // Check Down Right Diag
+            // Check Down Left Diag
+            // Check Up Right Diag
+            // Check Up Left Diag 
+        }
+    }
+}
+
 
 console.time("runtime");
 console.log(largestProd());
