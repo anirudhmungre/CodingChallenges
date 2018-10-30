@@ -44,7 +44,7 @@ function largestProd(){
     let block = getBlock();
     let largest = -1;
     let test = 0;
-    // Only check down and right because up and left is redundant
+    // Only check down and right bottom diags because up diags, up and left is redundant
     for (let i = 0 ; i < block.length-4 ; i++){
         for (let j = 0 ; j < block.length-4 ; j++){
             // Check down
@@ -52,8 +52,6 @@ function largestProd(){
             // Check Right
             // Check Down Right Diag
             // Check Down Left Diag
-            // Check Up Right Diag
-            // Check Up Left Diag 
         }
     }
 }
