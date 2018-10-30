@@ -17,8 +17,22 @@
 
 // What is the value of the first triangle number to have over five hundred divisors?
 
-function triagNumDivisors(numDiv){
-    
+function checkDivs(x){
+    let divs = 2 //Start at 2 because divisible by itself and 1
+    for (let i=2 ; i<=x/2 ; i++){
+        if (x%i==0){divs++}
+    }
+    return divs
+}
+
+function triagNumDivisors(x){
+    let numDiv=-1, num=0
+    for(let i=1 ; numDiv<=x ; i++){
+        numDiv=0
+        num+=i
+        numDiv=checkDivs(num)
+    }
+    return num
 }
 
 console.time("runtime")
