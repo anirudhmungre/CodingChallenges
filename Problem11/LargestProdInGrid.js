@@ -28,35 +28,48 @@
 function getBlock(){
     const fs = require('fs');
     let arr = fs.readFileSync("input.txt", "UTF8").split('\n');
-    let block = [];
+    let block = []
     for (let i = 0 ; i < arr.length ; i++){
-        block.push(arr[i].split(' '));
+        block.push(arr[i].split(' '))
     }
     for (let i = 0 ; i < block.length ; i++){
         block[i] = block[i].map(function(x){
-            return parseInt(x);
+            return parseInt(x)
         })
     }
-    return block;
+    return block
 }
 
 function largestProd(){
-    let block = getBlock();
-    let largest = -1;
-    let test = 0;
+    let block = getBlock()
+    let largest = -1
+    let testDown = 0, testRight = 0, testRightDiag = 0, testLeftDiag = 0
     // Only check down and right bottom diags because up diags, up and left is redundant
     for (let i = 0 ; i < block.length-4 ; i++){
         for (let j = 0 ; j < block.length-4 ; j++){
+            try{
+                if (i+3>block.length || j+3>block.length || j-3<0){
+                    throw ArrayIndexOutOfBoundsException
+                }
+            }
+            catch(aiobe){continue}
             // Check down
-            testDown = block[i][j]*      
+            testDown = block[i][j]*block[i+1][j]*block[i+2][j]*block[i+3][j]
             // Check Right
+            testRight = block[i][j]*block[i][j+1]*block[i][j+2]*block[i][j+3]
             // Check Down Right Diag
+            testRightDiag = block[i][j]*block[i+1][j+1]*block[i+2][j+2]*block[i+3][j+3]
             // Check Down Left Diag
+            testLeftDiag = block[i][j]*block[i+1][j-1]*block[i+2][j-2]*block[i+3][j-3]
+            max = Math.max(testDown, testRight, testRightDiag, testLeftDiag)
+            
+            largest = largest<max ? max : largest
         }
     }
+    return largest
 }
 
 
-console.time("runtime");
-console.log(largestProd());
-console.timeEnd("runtime");
+console.time("runtime")
+console.log(largestProd())
+console.timeEnd("runtime")
