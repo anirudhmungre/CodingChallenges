@@ -4,6 +4,6 @@ function -(){
 
 }
 
-console.time("runtime");
-console.log();
-console.timeEnd("runtime");
+console.time("runtime")
+console.log()
+console.timeEnd("runtime")
