@@ -25,7 +25,7 @@ function checkDivs(x){
     return divs
 }
 
-function triagNumDivisors(x){
+function triNumDivisors(x){
     let numDiv=-1, num=0
     for(let i=1 ; numDiv<=x ; i++){
         numDiv=0
@@ -36,5 +36,5 @@ function triagNumDivisors(x){
 }
 
 console.time("runtime")
-console.log(triagNumDivisors(500))
+console.log(triNumDivisors(500))
 console.timeEnd("runtime")
